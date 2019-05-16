@@ -11,6 +11,10 @@
           <% @ideas.each do | idea |%>
             <li class="p-list">
 
+              <% if idea.picture.attached? %>
+                <img src="<%=(url_for(idea.picture))%>">
+              <% end%>
+
               <div class="text_post">
                 <h1 class="title-post"><%= idea.title%></h1>
                 <p><%= idea.text%></p>

@@ -23,7 +23,7 @@ class IdeasController < ApplicationController
     end
 
     def users_params
-        params.require(:idea).permit(:title,:text)
+        params.require(:idea).permit(:title,:text, :picture)
     end
 
 end
