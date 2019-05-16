@@ -1,0 +1,17 @@
+<nav class="head">
+    <ul>
+        <li><a href="url">New Idea</a><li>
+        <li><p>Sorte Ideas by "    "</p></li>
+        <li><p>Notification "    "</p></li>
+</nav>
+
+<main class="grid">
+  <% @ideas.each do | idea |%>
+  <article>
+    <div class="text">
+      <h3><%= idea.title%></h3>
+      <p><%= idea.text%></p>
+    </div>
+  </article>
+  <% end %>
+</main>
