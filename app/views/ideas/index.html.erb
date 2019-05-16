@@ -1,17 +1,26 @@
-<nav class="head">
-    <ul>
-        <li><a href="url">New Idea</a><li>
-        <li><p>Sorte Ideas by "    "</p></li>
-        <li><p>Notification "    "</p></li>
-</nav>
+  <div class="menu">
+    <ul class="menu-list">
+      <li> <a class='menu_link' href=<%= new_idea_path %>>New idea</a></li>
+    </ul>
+    <h1>Anotações</h1>
+  </div>
+  
+  <div class="wrapper">
+    
+      <ul class="b_post">
+          <% @ideas.each do | idea |%>
+            <li class="p-list">
 
-<main class="grid">
-  <% @ideas.each do | idea |%>
-  <article>
-    <div class="text">
-      <h3><%= idea.title%></h3>
-      <p><%= idea.text%></p>
-    </div>
-  </article>
-  <% end %>
-</main>
+              <div class="text_post">
+                <h1 class="title-post"><%= idea.title%></h1>
+                <p><%= idea.text%></p>
+            
+              </div>
+              <div class="link_post">
+              </div>
+            </li>
+        <% end %>
+      </ul>
+  </div>
+
+

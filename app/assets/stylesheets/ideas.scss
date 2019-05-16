@@ -1,45 +1,170 @@
-// Place all the styles related to the ideas controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
-  }
-  
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url("reset.css");
 
-.grid { 
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 20px;
-    align-items: stretch;
+html, body {
+  height: 100%;
+  min-height: 100%;
 }
-.grid > article {
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+
+.title-post{
+    color: #ff4411; font-size: 20px; font-family: 'Signika', sans-serif; padding-bottom: 10px;
 }
-.grid > article img {
-    max-width: 100%;
+h1 {
+  text-align: center;
+  margin: 10px;
 }
-.text {
-    padding: 0 20px 20px;
+h2 {
+  font-size: 20px;
+  margin: 10px;
+  text-transform: capitalize;  
 }
-.text > button {
-    background: gray;
-    border: 0;
-    color: white;
-    padding: 10px;
+
+body {
+  font: 15px arial;
+  color: rgba(0, 0, 0, .7);
+  font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    font-size: 14px;
+    margin-top: .5em; 
+    color: #666;
+    text-align: justify;
+}
+
+.menu{
     width: 100%;
+    position: inherit;
+    background: #009688; 
+    height: 50px;
+}
+
+.menu_list, li{
+    text-align: center;
+    list-style: none;
+    display: inline;
+}
+
+.menu_link{
+    
+}
+
+
+.wrapper {
+    height: 100%;
+    min-height: 100%;
+
+    /* habilita o flex nos filhos diretos */
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+
+
+    /* centraliza na horizontal */
+    -ms-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.text_post{
+    padding: 12px 15px 15px 15px;
+    word-wrap: break-word;
+}
+
+.link_post{
+    background: #F1FBE5;  
+}
+.img_link{
+    text-decoration: none;
+    color: #1155CC;
+}
+
+.b_post, .p-list {
+    list-style: none;
+    min-height: 30px;
+    margin: 5px;
+    max-width: 300px;
+}
+
+.p-list {
+    box-shadow: 5px 5px 5px #DADADA;
+    float: left;
+    display:inline;
+    height:400px;
+    overflow: auto;
+    width: 350px;
+    text-align: left;
+}
+
+
+/*color*/
+.p-list:nth-child(1n+0) {
+    background: #FF8A80;
+}
+.p-list:nth-child(2n+0) {
+    background: #FFD180;
+}
+.p-list:nth-child(3n+0) {
+    background: #FFFF8D;
+}
+.p-list:nth-child(4n+0) {
+    background: #CFD8DC;
+}
+.p-listli:nth-child(5n+0) {
+    background: #80D8FF;
+}
+.p-list:nth-child(6n+0) {
+    background: #A7FFEB;
+}
+.p-list:nth-child(7n+0) {
+    background: #CCFF90;
+}
+.p-list:nth-child(8n+0) {
+    background: #FAFAFA;
+}
+
+.a_admin {
+    color: #FFFFFF;
+    background-color: #009688;
+    text-align: center;
+    padding: 8px 16px 8px 16px;
+    text-decoration: none;
+
+}
+.a_admin:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+img {
+    width: 100%;
+    max-height: 150px;
+}
+
+@media screen and (min-width: 939px) {
+    .b_post{
+        min-width: 930px;
+        height: 100%;
+}
+}
+
+@media screen and (max-width: 939px) {
+    .b_post{
+        display: inline;
+        width: inherit;
+        height: 100%;
+}
+    .p-list {
+        box-shadow: 5px 5px 5px #DADADA;
+        float: left;
+        display:inline;
+        height:400px;
+        overflow: auto;
+        width: 100%;
+        text-align: left;
+}
+    .b_post, .p-list {
+        list-style: none;
+        margin: 5px;
+        width: 100%;   
+    }
+
 }
