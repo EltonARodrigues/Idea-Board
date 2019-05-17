@@ -4,12 +4,49 @@
     <title>IdeaBoard</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'reset', media: 'all' %>
+    <%= stylesheet_link_tag 'bootstrap_and_overrides', media: 'all' %>
+    <%= stylesheet_link_tag 'font', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="text-center">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+  <a class="navbar-brand" href=<%= root_path %>>Idea Board</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if current_user %>
+
+      <li class="nav-item">
+        <a class="nav-link active" href=<%= new_idea_path %>>Adicionar ideia</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href=<%= edit_user_path(current_user) %>>Perfil </a>
+      </li> 
+       <li class="nav-item">
+        <a class="nav-link" href=<%= logout_path %>>Logout </a>
+      </li> 
+      <% else %>
+      <li class="nav-item">
+        <a class="nav-link" href=<%= login_path %>>Sign in </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href=<%= signup_path %>>Sign up </a>
+      </li>
+      <%end%>
+      <li class="nav-item">
+        <%if flash[:notice]%>
+          <div class="nav-link notice" role="alert"><%=flash[:notice]%></div>
+        <% end %>
+      </li>
+       
+    </ul>
+  </div>
+</nav>
     <%= yield %>
   </body>
 </html>

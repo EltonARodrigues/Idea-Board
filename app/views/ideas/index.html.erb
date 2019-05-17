@@ -1,30 +1,40 @@
-  <div class="menu">
-    <ul class="menu-list">
-      <li> <a class='menu_link' href=<%= new_idea_path %>>New idea</a></li>
-    </ul>
-    <h1>Anotações</h1>
-  </div>
-  
-  <div class="wrapper">
-    
-      <ul class="b_post">
-          <% @ideas.each do | idea |%>
-            <li class="p-list">
+<%= stylesheet_link_tag "ideas", :media => "all" %>
 
-              <% if idea.picture.attached? %>
-                <img src="<%=(url_for(idea.picture))%>">
-              <% end%>
-
-              <div class="text_post">
+  <main>
+    <section class="cards">
+      <% @ideas.each do | idea |%>
+      <article class="hover">
+            <% if idea.picture.attached? %>
+                <figure tabindex=1>
+                  <img class="imagem-idea" src="<%=(url_for(idea.picture))%>">
+                </figure>
+                <% end%>
+                <% if current_user %>
+                  <%= link_to image_tag("remove.png", class: "remove-img"), idea_path(idea), :method => :delete, class:"remove-button"%>
+                  <%= link_to image_tag("edit.png", class: "remove-img"), edit_idea_path(idea), class:"edit-button"%> 
+                <% end %>
+            <div class="text_post">
                 <h1 class="title-post"><%= idea.title%></h1>
-                <p><%= idea.text%></p>
+                <p class="idea-text"><%= idea.text%></p>
             
-              </div>
-              <div class="link_post">
-              </div>
-            </li>
-        <% end %>
-      </ul>
-  </div>
+            </div>
+            <div class="enquete">
+            <ul class="lista-enquete">
+              <li class="enquente-vote upvote">
+                <%= link_to like_idea_path(idea), method: :put do %>
+                  <strong>Aprovar - <%= idea.get_upvotes.size%></strong> 
+                  </button> 
+                <% end %>
+              </li>
+              <li class="enquente-vote downvote">
+                <%= link_to unlike_idea_path(idea), method: :put do %>
+                   <strong>Reprovar - <%= idea.get_downvotes.size%></strong> 
+                <% end %>
+              </li>
+            </ul>
+            </div>
+      </article>
+      <% end %>
+    </section>
 
-
+  </main>

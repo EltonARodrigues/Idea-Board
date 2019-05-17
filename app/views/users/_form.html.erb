@@ -1,0 +1,35 @@
+<div class="container mx-auto">
+    <div class="py-1 wrapper">
+      <div class="form-wrapper">
+         <%= form_with(model: user, local: true) do |form| %>
+            <fieldset class="section is-active">
+            <div class="fields">
+            <%= form.label :username %>
+            <%= form.text_field :username %>
+            <small id="emailHelp" class="form-text text-muted left">Mínimo de 4 caracteres</small>
+
+            <%= form.label :email %>
+            <%= form.text_field :email, placeholder: "exemplo@email.com" %>
+
+            <%= form.label "Senha" %>
+            <%= form.password_field :password%>
+            <small id="emailHelp" class="form-text text-muted">Mínimo de 6 caracteres</small>
+
+            <%= form.label "Confirme a senha" %>
+            <%= form.password_field :password_confirmation %>
+            <% if user.errors.any? %>
+          <div class="alert alert-danger">
+            <strong>Erro encontrado no preenchimento</strong>
+          </div>
+          <% end %>
+          </div>
+            <% if current_user %>
+              <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Tem certeza?' }, class:"destoy-button" %>
+            <% end %>
+            <%= form.submit 'Criar', class: "submit button" %>
+          </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
