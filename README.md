@@ -1,6 +1,8 @@
 # Idea-Board
 
-Projeto: Quadro aonde os usuários colocam uma ideia
+Quadro aonde os usuários colocam ideias
+
+Base do projeto => Project #28: Idea Board - https://medium.freecodecamp.org/every-time-you-build-a-to-do-list-app-a-puppy-dies-505b54637a5d
 
 
 O que funciona:
