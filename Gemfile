@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem "paperclip", "~> 5.0.0"
+gem "paperclip", ">= 5.2.0"
 
 gem "twitter-bootstrap-rails"
 
