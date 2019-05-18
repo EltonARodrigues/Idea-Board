@@ -5,6 +5,4 @@ class Idea < ApplicationRecord
 
     validates :title, presence: true, length: {maximum: 50}
     validates :text, presence: true, length: {maximum: 255}
-
-
 end
