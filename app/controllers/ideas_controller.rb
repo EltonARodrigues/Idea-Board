@@ -16,6 +16,8 @@ class IdeasController < ApplicationController
 
   def create
     @idea = Idea.new idea_params
+    picture.attach(paras[:picture]) 
+
     if @idea.save
       redirect root_path, "Ideia salva com sucesso"
     else
