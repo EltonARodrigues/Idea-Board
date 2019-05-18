@@ -1,6 +1,8 @@
 # Idea-Board
 
-Quadro aonde os usuários colocam ideias
+Quadro para adicionar ideias.
+
+**- Modifiquei o projeto para salvar imagem no S3 e ficar mais apresentavel no Heroku.**
 
 Base do projeto => Project #28: Idea Board - https://medium.freecodecamp.org/every-time-you-build-a-to-do-list-app-a-puppy-dies-505b54637a5d
 
