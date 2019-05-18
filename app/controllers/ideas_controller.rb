@@ -43,6 +43,7 @@ class IdeasController < ApplicationController
   def destroy
     if user_logged
       @idea.destroy
+      @idea.picture.purge
       redirect root_path
     else
       redirect root_path
